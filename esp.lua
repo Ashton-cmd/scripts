@@ -966,8 +966,8 @@ function ColorPicker.new(Position, Size, Color)
         Transparency = 1;
     }; SetImage(Overlay, Images.Overlay);
     local CursorOutline = Drawings['Circle-CursorOutline'] {
-        Radius = 4;
-        Thickness = 2;
+        Radius = 3;
+        Thickness = 1;
         Filled = false;
         Color = Color3.new(0.2, 0.2, 0.2);
         Position = V2New(Main.Position.X + Main.Size.X - 10, Main.Position.Y + (Main.Size.Y / 2));
@@ -980,8 +980,8 @@ function ColorPicker.new(Position, Size, Color)
         Position = CursorOutline.Position;
     };
     local CursorOutline = Drawings['Circle-CursorOutlineSquare'] {
-        Radius = 4;
-        Thickness = 2;
+        Radius = 3;
+        Thickness = 0;
         Filled = false;
         Color = Color3.new(0.2, 0.2, 0.2);
         Position = V2New(Preview.Position.X + Preview.Size.X - 2, Preview.Position.Y + 2);
@@ -989,7 +989,7 @@ function ColorPicker.new(Position, Size, Color)
     Drawings['Circle-CursorSquare'] {
         Radius = 3;
         Transparency = 1;
-        Filled = true;
+        Filled = false;
         Color = Color3.new(1, 1, 1);
         Position = CursorOutline.Position;
     };
