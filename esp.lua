@@ -1119,7 +1119,7 @@ function SubMenu:Show(Position, Title, Options)
 			Filled		= false;
 			Color		= Colors.Primary.Main;
 			Thickness	= 3;
-			Visible		= Visible;
+			Visible		= false;
 		});
 	end);
 	Menu:AddMenuInstance('Sub-TopBar', 'Square', {
@@ -1127,21 +1127,21 @@ function SubMenu:Show(Position, Title, Options)
 		Size		= V2New(BaseSize.X, 10);
 		Color		= Colors.Primary.Dark;
 		Filled		= true;
-		Visible		= Visible;
+		Visible		= false;
 	});
 	Menu:AddMenuInstance('Sub-TopBarTwo', 'Square', {
 		Position 	= BasePosition + V2New(0, 10);
 		Size		= V2New(BaseSize.X, 20);
 		Color		= Colors.Primary.Main;
 		Filled		= true;
-		Visible		= Visible;
+		Visible		= false;
 	});
 	Menu:AddMenuInstance('Sub-TopBarText', 'Text', {
 		Size 		= 20;
 		Position	= shared.MenuDrawingData.Instances['Sub-TopBarTwo'].Position + V2New(15, -3);
 		Text		= Title or '';
 		Color		= Colors.Secondary.Light;
-		Visible		= Visible;
+		Visible		= false;
 	});
 	Menu:AddMenuInstance('Sub-Filling', 'Square', {
 		Size		= BaseSize - V2New(0, 30);
@@ -1149,7 +1149,7 @@ function SubMenu:Show(Position, Title, Options)
 		Filled		= true;
 		Color		= Colors.Secondary.Main;
 		Transparency= .75;
-		Visible		= Visible;
+		Visible		= false;
 	});
 
 	if Options then
@@ -1165,14 +1165,14 @@ function SubMenu:Show(Position, Title, Options)
 					Radius = IsSynapse and 10 or 10;
 					NumSides = 10;
 					Filled = true;
-					Visible = true;
+					Visible = false;
 				});
 				local Text = Menu:AddMenuInstance(GetName'Text', 'Text', {
 					Text = Option.Text;
 					Position = ColorPreview.Position + V2New(15, -8);
 					Size = 16;
 					Color = Colors.Primary.Dark;
-					Visible = true;
+					Visible = false;
 				});
 				UIButtons[#UIButtons + 1] = {
 					FromSubMenu = true;
@@ -1189,7 +1189,7 @@ function SubMenu:Show(Position, Title, Options)
 					Option = Option.Function;
 					Instance = Menu:AddMenuInstance(Format('%s_Hitbox', GetName'Button'), 'Square', {
 						Size		= V2New(BaseSize.X, 20) - V2New(20, 0);
-						Visible		= true;
+						Visible		= false;
 						Transparency= .5;
 						Position	= Position - V2New(10, 10);
 						Color		= Colors.Secondary.Light;
@@ -1200,7 +1200,7 @@ function SubMenu:Show(Position, Title, Options)
 					Text		= Option.Text;
 					Size		= 18;
 					Position	= Position + V2New(5, -10);
-					Visible		= true;
+					Visible		= false;
 					Color		= Colors.Primary.Dark;
 				});
 			end
@@ -1270,7 +1270,7 @@ function CreateMenu(NewPosition) -- Create Menu
 			Filled		= false;
 			Color		= Colors.Primary.Main;
 			Thickness	= 3;
-			Visible		= true;
+			Visible		= false;
 		});
 	end);
 	Menu:AddMenuInstance('TopBar', 'Square', {
@@ -1278,21 +1278,21 @@ function CreateMenu(NewPosition) -- Create Menu
 		Size		= V2New(BaseSize.X, 15);
 		Color		= Colors.Primary.Dark;
 		Filled		= true;
-		Visible		= true;
+		Visible		= false;
 	});
 	Menu:AddMenuInstance('TopBarTwo', 'Square', {
 		Position 	= BasePosition + V2New(0, 15);
 		Size		= V2New(BaseSize.X, 45);
 		Color		= Colors.Primary.Main;
 		Filled		= true;
-		Visible		= true;
+		Visible		= false;
 	});
 	Menu:AddMenuInstance('TopBarText', 'Text', {
 		Size 		= 25;
 		Position	= shared.MenuDrawingData.Instances.TopBarTwo.Position + V2New(25, 10);
 		Text		= 'Unnamed ESP';
 		Color		= Colors.Secondary.Light;
-		Visible		= true;
+		Visible		= false;
 		Transparency= 1; -- proto outline fix
 		Outline 	= true;
 	});
@@ -1301,7 +1301,7 @@ function CreateMenu(NewPosition) -- Create Menu
 		Position	= shared.MenuDrawingData.Instances.TopBarTwo.Position + V2New(BaseSize.X - 75, 25);
 		Text		= 'by ic3w0lf';
 		Color		= Colors.Secondary.Light;
-		Visible		= true;
+		Visible		= false;
 		Transparency= 1;
 		Outline 	= true;
 	});
@@ -1311,7 +1311,7 @@ function CreateMenu(NewPosition) -- Create Menu
 		Filled		= true;
 		Color		= Colors.Secondary.Main;
 		Transparency= .5;
-		Visible		= true;
+		Visible		= false;
 	});
 
 	local CPos = 0;
@@ -1334,20 +1334,20 @@ function CreateMenu(NewPosition) -- Create Menu
 				Position	= BasePosition;
 				Color		= Colors.Secondary.Light;
 				Filled		= true;
-				Visible		= true;
+				Visible		= false;
 			});
 			Menu:AddMenuInstance(Format('%s_InnerCircle', v.Name), 'Circle', {
 				Radius		= 7;
 				Position	= BasePosition;
 				Color		= Colors.Secondary.Dark;
 				Filled		= true;
-				Visible		= v.Value;
+				Visible		= false;
 			});
 			Menu:AddMenuInstance(Format('%s_Text', v.Name), 'Text', {
 				Text		= v.Text;
 				Size		= 20;
 				Position	= BasePosition + V2New(20, -10);
-				Visible		= true;
+				Visible		= false;
 				Color		= Colors.Secondary.Light;
 				Transparency= 1;
 				Outline		= true;
@@ -1366,13 +1366,13 @@ function CreateMenu(NewPosition) -- Create Menu
 				Color			= Colors.Secondary.Light;
 				-- Thickness		= 3;
 				Filled			= true;
-				Visible			= true;
+				Visible			= false;
 				Position 		= BasePosition + V2New(15, -5);
 				Size 			= BaseSize - V2New(30, 10);
 				Transparency	= 0.5;
 			});
 			local Slider		= Menu:AddMenuInstance(Format('%s_Slider', v.Name), 'Square', {
-				Visible			= true;
+				Visible			= false;
 				Filled			= true;
 				Color			= Colors.Primary.Dark;
 				Size			= V2New(5, Line.Size.Y);
@@ -1384,7 +1384,7 @@ function CreateMenu(NewPosition) -- Create Menu
 				Center			= true;
 				Transparency	= 1;
 				Outline			= true;
-				Visible			= true;
+				Visible			= false;
 				Color			= Colors.White;
 			}); Text.Position	= Line.Position + (Line.Size / 2) - V2New(0, Text.TextBounds.Y / 1.75);
 			local AMT			= Menu:AddMenuInstance(Format('%s_AmountText', v.Name), 'Text', {
@@ -1393,7 +1393,7 @@ function CreateMenu(NewPosition) -- Create Menu
 				Center			= true;
 				Transparency	= 1;
 				Outline			= true;
-				Visible			= true;
+				Visible			= false;
 				Color			= Colors.White;
 				Position		= Text.Position;
 			});
@@ -1440,7 +1440,7 @@ function CreateMenu(NewPosition) -- Create Menu
 				Option = v;
 				Instance = Menu:AddMenuInstance(Format('%s_Hitbox', v.Name), 'Square', {
 					Size		= V2New(BaseSize.X, 20) - V2New(30, 0);
-					Visible		= true;
+					Visible		= false;
 					Transparency= .5;
 					Position	= BasePosition + V2New(15, -10);
 					Color		= Colors.Secondary.Light;
@@ -1451,7 +1451,7 @@ function CreateMenu(NewPosition) -- Create Menu
 				Text		= v.Text;
 				Size		= 20;
 				Position	= BasePosition + V2New(20, -10);
-				Visible		= true;
+				Visible		= false;
 				Color		= Colors.Secondary.Light;
 				Transparency= 1;
 				Outline		= true;
@@ -1460,7 +1460,7 @@ function CreateMenu(NewPosition) -- Create Menu
 				Text		= tostring(v.Value):match'%w+%.%w+%.(.+)';
 				Size		= 20;
 				Position	= BasePosition;
-				Visible		= true;
+				Visible		= false;
 				Color		= Colors.Secondary.Light;
 				Transparency= 1;
 				Outline		= true;
@@ -1480,7 +1480,7 @@ function CreateMenu(NewPosition) -- Create Menu
 				Option = v;
 				Instance = Menu:AddMenuInstance(Format('%s_Hitbox', v.Name), 'Square', {
 					Size		= V2New(BaseSize.X, 20) - V2New(30, 0);
-					Visible		= true;
+					Visible		= false;
 					Transparency= .5;
 					Position	= BasePosition + V2New(15, -10);
 					Color		= Colors.Secondary.Light;
@@ -1491,7 +1491,7 @@ function CreateMenu(NewPosition) -- Create Menu
 				Text		= v.Text;
 				Size		= 20;
 				Position	= BasePosition + V2New(20, -10);
-				Visible		= true;
+				Visible		= false;
 				Color		= Colors.Secondary.Light;
 				Transparency= 1;
 				Outline		= true;
