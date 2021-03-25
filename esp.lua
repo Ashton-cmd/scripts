@@ -51,7 +51,7 @@ local Spectating;
 
 shared.MenuDrawingData	= shared.MenuDrawingData or { Instances = {} };
 shared.InstanceData		= shared.InstanceData or {};
-shared.RSName			= shared.RSName or ('UnnamedESP_by_ic3-' .. HttpService:GenerateGUID(false));
+shared.RSName			= shared.RSName or ('Esp Settings' .. HttpService:GenerateGUID(false));
 
 local GetDataName		= shared.RSName .. '-GetData';
 local UpdateName		= shared.RSName .. '-Update';
